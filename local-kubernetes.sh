@@ -18,9 +18,10 @@ then
     # Create and setup pane for hugo server
     tmux new-window -t $SESSION:1 -n 'minikube'
     tmux send-keys -t minikube 'minikube start' Enter 
+    tmux send-keys -t minikube 'minikube logs -f' Enter
 
-    # tmux new-window -t $SESSION:2 -n 'Writing'
-    # tmux send-keys -t 'Writing' "nvim" C-m
+    tmux new-window -t $SESSION:2 -n 'CommandPrompt'
+    tmux send-keys -t 'CommandPrompt' "nvim" C-m
 
     # Setup an additional shell
     # tmux new-window -t $SESSION:3 -n 'Shell'
